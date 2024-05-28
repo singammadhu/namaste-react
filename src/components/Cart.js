@@ -1,7 +1,7 @@
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ItemList from "./ItemList";
 import { clearCart } from "../utils/cartSlice";
-import { useState, useEffect } from "react";
 
 const Cart = () => {
     const cartItems = useSelector((store) => store.cart.items);
@@ -27,7 +27,7 @@ const Cart = () => {
     return (
         <div className="text-center m-4 p-4">
             <h1 className="text-2xl font-bold">Cart</h1>
-            <div className="w-6/12 m-auto">
+            <div className="w-full md:w-6/12 m-auto">
                 <button
                     className="p-2 m-2 bg-black text-white rounded-lg"
                     onClick={handleCartClear}

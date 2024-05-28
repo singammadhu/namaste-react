@@ -17,19 +17,19 @@ const Header = () => {
     const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
     return (
-        <div className="flex justify-between items-center bg-pink-100 shadow-lg p-4 sm:bg-yellow-100">
+        <div className="flex flex-col sm:flex-row justify-between items-center bg-pink-100 shadow-lg p-4 sm:bg-yellow-100">
             {/* Logo container with an image element */}
-            <div className="logo-container">
+            <div className="logo-container mb-4 sm:mb-0">
                 <img
-                    className="w-28 mr-4"
+                    className="w-28"
                     src={LOGO_URL} // Source URL for the logo image
                     alt="Logo" // Alt text for accessibility
                 />
             </div>
 
             {/* Navigation items */}
-            <div className="flex items-center">
-                <ul className="flex space-x-4 text-lg">
+            <div className="flex flex-col sm:flex-row items-center w-full sm:w-auto">
+                <ul className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 text-lg w-full sm:w-auto">
                     <li className="px-4">Online Status: {onlineStatus ? "✅" : "❎"}</li>
                     <li className="px-4">
                         {/* Link to the home page */}
@@ -49,7 +49,7 @@ const Header = () => {
                 </ul>
                 {/* Button to toggle login/logout state */}
                 <button
-                    className="ml-4 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-200"
+                    className="mt-4 sm:mt-0 sm:ml-4 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-200"
                     onClick={() => {
                         // Toggle button text between Login and Logout
                         setBtn(btn === "Login" ? "Logout" : "Login");

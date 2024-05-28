@@ -1,4 +1,3 @@
-// RestaurantCard.js
 import React from 'react';
 import { CDN_URL_RESTAURANTS_IMAGE } from "../utils/constants";
 
@@ -11,8 +10,9 @@ const RestaurantCard = (props) => {
         avgRating,
         sla
     } = resData?.info;
+
     return (
-        <div className="m-4 p-4 w-full md:w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200">
+        <div className="m-4 p-4 w-full sm:w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200">
             <img 
                 className="rounded-lg w-full"
                 alt="res-logo"

@@ -1,7 +1,7 @@
- import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
-import { useState } from "react";RestaurantCategory
+import { useState } from "react";
 import RestaurantMenuShimmer from "./RestaurantMenuShimmer";
 
 const RestaurantMenu = () => {
@@ -11,9 +11,9 @@ const RestaurantMenu = () => {
     // Fetch restaurant menu information using custom hook
     const resInfo = useRestaurantMenu(resId);
 
-   //activeCategoryIndex it tells which index should be shown
-    const[showIndex,setShowIndex]=useState(0);
-    
+    // Active category index to determine which category to show
+    const [showIndex, setShowIndex] = useState(0);
+
     // Show a loading shimmer while data is being fetched
     if (resInfo === null) return <RestaurantMenuShimmer />;
 
@@ -34,17 +34,14 @@ const RestaurantMenu = () => {
             <h2 className="text-lg font-bold">
                 {cuisines?.join(', ')} - {costForTwoMessage}
             </h2>
-            {
-                categories && categories.map((category,index) => (
-                    <RestaurantCategory
-                        key={category?.card?.card?.title}
-                        data={category?.card?.card}
-                        showItems={index===showIndex ? true : false}
-                        setShowIndex={()=>(
-                            setShowIndex(index===showIndex ? null : index))}
-                    />
-                ))
-            }
+            {categories && categories.map((category, index) => (
+                <RestaurantCategory
+                    key={category?.card?.card?.title}
+                    data={category?.card?.card}
+                    showItems={index === showIndex ? true : false}
+                    setShowIndex={() => setShowIndex(index === showIndex ? null : index)}
+                />
+            ))}
         </div>
     );
 };

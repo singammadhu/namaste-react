@@ -76,7 +76,7 @@ const Body = () => {
     ) : (
         <div className="body max-w-7xl mx-auto p-4">
             <div className="filter flex flex-col sm:flex-row justify-between items-center mb-4">
-                <div className="search mb-4 sm:mb-0 sm:mr-4 flex items-center">
+                <div className="search mb-4 sm:mb-0 sm:mr-4 flex items-center w-full sm:w-auto">
                     <input
                         type="text"
                         className="search-box border border-gray-300 rounded-lg p-2 mr-2 w-full sm:w-auto"
@@ -126,4 +126,4 @@ const Body = () => {
     );
 };
 
-export default Body
+export default Body;

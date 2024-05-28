@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div className="about p-6 max-w-md mx-auto my-7 bg-white sm:bg-white-100 rounded-xl shadow-md space-y-6">
       <h1 className="text-2xl font-bold text-center mb-4">About</h1>
-       <div className="space-y-2">
+      <div className="space-y-2">
         <p className="text-gray-700">My name is <strong>Singam Madhu</strong>.</p>
         <p className="text-gray-700">I have been working at <strong>TCS</strong> as a frontend developer specializing in React.js for the past 1.5 years.</p>
         <p className="text-gray-700">I am actively seeking a new opportunity in frontend development, focusing on React.js.</p>
