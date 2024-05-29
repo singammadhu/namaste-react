@@ -19,7 +19,9 @@ const Body = () => {
         try {
             const response = await fetch(RESTAURANTS_API + pageNum);
             const json = await response.json();
-            const restaurants = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+            const restaurants = json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+            console.log('Fetched restaurants:', restaurants); // Log fetched data
+
             if (pageNum === 1) {
                 setListOfRestaurants(restaurants);
                 setFiltered(restaurants);
@@ -76,7 +78,7 @@ const Body = () => {
     ) : (
         <div className="body max-w-7xl mx-auto p-4">
             <div className="filter flex flex-col sm:flex-row justify-between items-center mb-4">
-                <div className="search mb-4 sm:mb-0 sm:mr-4 flex items-center w-full sm:w-auto">
+                <div className="search mb-4 sm:mb-0 sm:mr-4 flex items-center">
                     <input
                         type="text"
                         className="search-box border border-gray-300 rounded-lg p-2 mr-2 w-full sm:w-auto"
