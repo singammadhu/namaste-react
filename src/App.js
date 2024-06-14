@@ -49,7 +49,6 @@ const appRouter = createBrowserRouter([
             {
                 path: "/cart",
                 element: <Cart/>
-
             }
         ],
         // Element to render for any unmatched routes (error handling)
